@@ -7,7 +7,7 @@ The model runs on GAMA-platform, which is a modeling and simulation development 
 # Getting started
 
 ## Installing
-Dowload GAMA-platform (GAMA1.7RC2 version) from https://gama-platform.github.io/. This platform requires to install Java 1.8 and minimum of 4 GB of RAM.
+Download GAMA-platform (GAMA1.7RC2 version) from https://gama-platform.github.io/. This platform requires to install Java 1.8 and minimum of 4 GB of RAM.
 
 After installation set up the maximum memory allocated to GAMA to at least 8 GB. It is possible through GAMA menu in Help -> Preferences -> Interface.
 
@@ -19,7 +19,7 @@ Project consists of input data in "includes" and model code in "models".
 
 Before running model code there is an option to parameterize routing algorithm by selecting either "shortest path" or "safest path" (default). Another parameter is responsible for visualization of facilities on display by type.
 
-After model run output data is saved in "output_data" folder in "includes".
+After model run output data is saved in "includes/output_data".
 
 Model initialization takes approximately 1 h and simulation run approximately 4 h.
 
