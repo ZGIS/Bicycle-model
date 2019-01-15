@@ -5,7 +5,7 @@
 * Description: The purpose of the model is to generate disaggregated traffic flow distribution of cyclists at the regional scale level. 
 * The model is fuelled by statistical and topographical data as well as by generalized assumptions derived from survey data on mobility behaviour. 
 * It results in emergent flow patterns at a high spatial and temporal level of detail.
-* Licence: CC BY-NC-SA 4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* Licence: CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 * Tags: traffic, bicycle
 */
 
