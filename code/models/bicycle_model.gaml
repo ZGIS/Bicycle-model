@@ -1,6 +1,6 @@
 /* 
 * Name: Bicycle model
-* Authors: Kaziyeva, D., Wallentin, G, Loidl, M.
+* Authors: Kaziyeva, D., Wallentin, G., Loidl, M.
 * Acknowledgements: The model is built on GAMA toy model "Simple traffic model" by Patrick Taillandier and extends "Salzburg Bicycle Model" by Gudrun Wallentin and Martin Loidl (Wallentin, Gudrun (2016, October 29). “Salzburg Bicycle model” (Version 1.0.0). CoMSES Computational Model Library. Retrieved from: https://www.comses.net/codebases/5259/releases/1.0.0/)
 * Description: The purpose of the model is to generate disaggregated traffic flow distribution of cyclists at the regional scale level. 
 * The model is fuelled by statistical and topographical data as well as by generalized assumptions derived from survey data on mobility behaviour. 
@@ -468,7 +468,7 @@ global{
 	}
 	
 	//Save registered cyclists on a network by hour as a heatmap
-	reflex saveHeatmap when:cycle = 1440{
+	reflex saveHeatmap when:cycle = 1441{
 		save road where(each.reversedRoad = nil) to: heatmapFileName type:"shp" crs:"EPSG:32633" rewrite:true attributes:[
 			"linkId"::linkId,
 			"brunnel"::brunnel,
@@ -496,9 +496,9 @@ global{
 	}
 	
 	//Stop simulation at the end of a day(simulation)
-	reflex stopSimulation when: cycle = 1440{
-		write length(people where(each.status="moving")) ;
-		write length(people);
+	reflex stopSimulation when: cycle = 1441{
+		write "Number of moving cyclists at the end of simulation: "+length(people where(each.status="moving"));
+		//ask moving cyclists that did not finish their trips also save their trips made by the end of simulation
 		ask people where(each.status="moving"){
 			do saveTrip;
 		}
@@ -1273,7 +1273,7 @@ species people skills:[moving] {
 		activityProbabilities<-[];//empty activityProbabilities variable
 		track_geom<-nil;
     	passedStation<- nil;
-    	if lastActivity = true or endingTime>1440{do die;}//remove a person from simulation
+    	if lastActivity = true or endingTime>=1440{do die;}//remove a person from simulation
     }
     
  	//Calculate distance of trips when people are transferred to targets without physically crossing the distance
