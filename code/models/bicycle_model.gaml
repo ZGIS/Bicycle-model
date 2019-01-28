@@ -1160,7 +1160,7 @@ species people skills:[moving] {
 			string(targetWithinCity)+delimeter+
 			string(male)+delimeter+
 			string(female)+delimeter+
-			string(age)+delimeter
+			string(age)
 		 to:tripsFileName type:"text" rewrite:false;
 	}
 	
