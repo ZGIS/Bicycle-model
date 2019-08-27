@@ -630,12 +630,13 @@ species home {
 			rndPerson.employmentStatus <- empStName;
 			listPeople<-listPeople-rndPerson;
 			numberEmpSt<-numberEmpSt-1;
-		}
-		 /*Forbidden people to select activities that don't suit their employment status.
-		  * There is one nuance: when "employed", "pupil" or "student" selects activity type, probabiilities for "work","business","school" and "university" are assumed as one common probability.*/
-		ask rndPerson {
-			if employmentStatus = "unemployed" or employmentStatus = "pensioner" or employmentStatus = "inactive_other" or employmentStatus = "below_15"{
-				forbiddenActivities <- ["work","business","school","university"];
+			
+			/*Forbidden people to select activities that don't suit their employment status.
+		 	 * There is one nuance: when "employed", "pupil" or "student" selects activity type, probabiilities for "work","business","school" and "university" are assumed as one common probability.*/
+			ask rndPerson {
+				if employmentStatus = "unemployed" or employmentStatus = "pensioner" or employmentStatus = "inactive_other" or employmentStatus = "below_15"{
+					forbiddenActivities <- ["work","business","school","university"];
+				}
 			}
 		}
 	}
