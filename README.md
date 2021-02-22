@@ -2,7 +2,7 @@
 
 The purpose of the model is to generate the spatio-temporal distribution of bicycle traffic flows at a regional scale level. Disaggregated results are computed for each network segment with the minute time step. The human decision-making is governed by probabilistic rules derived from the mobility survey. The model uses demographical data, employment data, mobility survey data, points of interest dataset, and a network.
 
-The model runs on GAMA-platform (Taillandier et.al. 2019), which is a modeling environment for building spatially explicit agent-based simulations.
+The model runs on GAMA-platform version RC1.8 (Taillandier et.al. 2019), which is a modeling environment for building spatially explicit agent-based simulations.
 
 # Getting started
 
